@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .logo {
+            display: block;
+            position: relative;
+            width: 123px;
+            height: 31px;
+        }
+        .logo:before,
+        .logo:after {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            content: "";
+            transition: opacity 0.3s;
+        }
+        .logo:before {
+            background-image: url('src/icons/index/logo.svg');
+        }
+        .logo:after {
+            opacity: 1;
+            background-image: url('src/icons/index/logo_grey.svg');
+        }
+        .logo:hover:before {
+            opacity: 1;
+        }
+        .logo:hover:after {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <a class="logo"></a>
+</body>
+</html>

@@ -1,0 +1,221 @@
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 65px;
+    z-index: 100;
+    transition: background-color 0.3s;
+    &__logo {
+        &_2 {
+            display: none;
+        }
+    }
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 198px 492px 198px;
+        align-items: start;
+        padding: 17px 0;
+        justify-content: space-between;
+    }
+    &__menu, &__registration {
+        margin: 0;
+        padding-top: 4px;
+        list-style: none; 
+        display: flex;
+        justify-content: space-around;
+        &-item {
+            position: relative;
+            padding: 0 20px;
+            display: block;
+            .list {
+                position: absolute;
+                top: 34px;
+                left: 0;
+                display: block;
+                max-height: 0;
+                transition: all 0.5s;
+                overflow: hidden;
+                &__item {
+                    display: block;
+                    margin: 12px 20px;
+                }
+                &__link {
+                    color: var(--white, #FFF);
+                    font-family: 'Montserrat', sans-serif;
+                    font-size: 14px;
+                    font-weight: 400;
+                    line-height: 120%; /* 16.8px */
+                    letter-spacing: 0.42px;
+                    position: relative;
+                    white-space: nowrap;
+                    &:after {    
+                        background: none repeat scroll 0 0 transparent;
+                        bottom: -2px;
+                        content: "";
+                        display: block;
+                        height: 1px;
+                        left: 50%;
+                        position: absolute;
+                        background: var(--white, #fff);
+                        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                        width: 0;
+                    }
+                    &:hover {
+                        color: var(--white, #fff);
+                        text-decoration: none;
+                        &:after {
+                            width: 100%; 
+                            left: 0; 
+                        }
+                    }
+                }
+            }
+            &:hover {
+                .list {
+                    max-height: 300px;
+                }
+            }
+        }        
+    }
+    &__link {
+        position: relative;
+        transition: color 0.3s;
+        &:hover {
+            color: var(--white, #fff);
+            text-decoration: none;
+            span {
+                &:after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+        span {
+            position: relative;
+            color: var(--white, #fff);
+            &:after {
+                background: none repeat scroll 0 0 transparent;
+                bottom: -2px;
+                content: "";
+                display: block;
+                height: 1px;
+                left: 50%;
+                position: absolute;
+                background: var(--white, #fff);
+                transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                width: 0;
+            }
+        }
+        svg {
+            color: var(--white, #fff);
+            margin-left: 3px;
+            margin-bottom: 1px;
+            transition: color 0.3s;
+        }
+    }
+    &__hamburger {
+        display: none;
+    }
+    &__color, &.white {
+        background-color: #fff;
+
+        // .logo {
+        //     border: 1px solid;
+        //     border-image: linear-gradient(180deg, #46C8E4 0%, #9576EB 100%);
+        //     border-image-slice: 1;
+        //     background-image: linear-gradient(180deg, #46C8E4 0%, #9576EB 100%);
+        //     -webkit-background-clip: text;
+        //     -webkit-text-fill-color: transparent;
+        //     &:hover {
+        //         background: #414141;
+        //         border: 1px solid var(--grey, #414141);
+        //         -webkit-background-clip: text;
+        //         -webkit-text-fill-color: transparent;
+        //     }
+        // }
+
+        // .logo {
+        //     &:before {
+        //         background: url('../icons/index/logo.svg');
+        //     }
+        //     &:hover {
+        //         &:before {
+        //             background: url('../icons/index/logo_grey.svg');
+        //         }
+        //     }
+        // }
+
+        // .logo {
+        //     &:before {
+        //         background-image: url('../icons/index/logo_grey.svg');
+        //     }
+        //     &:after {
+        //         opacity: 1;
+        //         background-image: url('../icons/index/logo.svg');
+        //     }
+        //     &:hover{
+        //         &:before {
+        //             opacity: 1;
+        //         }
+        //         &:after {
+        //             opacity: 0;
+        //         }
+        //     }
+        // }
+
+        .logo {
+            .logo_white, .logo_grey {
+                opacity: 0;
+            }
+            .logo_color {
+                opacity: 1;
+            }
+            &:hover {
+                .logo_color {
+                    opacity: 0;
+                }
+                .logo_grey {
+                    opacity: 1;
+                }
+            }
+        }
+
+        .header {
+            &__link {
+                span {
+                    color: var(--grey, #414141);
+                    &:hover {
+                        color: var(--grey, #414141);
+                    }
+                    &:after {
+                        background: var(--grey, #414141);
+                    }
+                }
+                svg {
+                    color: var(--grey, #414141);
+                }
+            }
+            &__hamburger {
+                span {
+                    background-color: var(--grey, #414141);
+                }
+            }
+        }
+
+        .list {
+            border-radius: 10px;
+            background:var(--white, #FFF);
+            &__link {
+                color: var(--grey, #414141);
+                &:hover {
+                    color: var(--grey, #414141);
+                }
+                &:after {
+                    background: var(--grey, #414141);
+                }
+            }
+        }
+    }
+    
+}
+
